@@ -1,10 +1,15 @@
 <h1><%= @projects.size %> FootStarter</h1>
 
-<ul>
-	<% @projects.each do |project| %>
-		<li>
-			<strong><%= project.name %></strong> - <%= project.description %>.  
-		</li>
-			We need cost: <strong><%= number_to_currency(project.target_pledge_amount) %></strong>
-	<% end %>
-</ul>
+<div class="container">
+	<ul>
+		<% @projects.each do |project| %>
+				<h2><strong> <%= project.name %></strong></h2>
+				<div class="par">
+					<p><strong>Description:</strong> <%= project.description %>.</p>
+					<p><strong>Cost:</strong> <%= number_to_currency(project.target_pledge_amount) %></p>
+					<p><strong>Website:</strong> <%= project.website %></p>
+					<p><strong>Total Pledges:</strong> <%= number_to_currency(project.pledging_ends_on) %></p>
+				</div>
+		<% end %>
+	</ul>
+</div>
