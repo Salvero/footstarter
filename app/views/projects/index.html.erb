@@ -8,7 +8,7 @@
 					<p><strong>Description:</strong> <%= truncate(project.description, length: 150, separator: ' ') %>.</p>
 					<p><strong>Cost:</strong> <%= number_to_currency(project.target_pledge_amount) %></p>
 					<p><strong>Website:</strong> <%= project.website %></p>
-					<p><strong>Total Pledges:</strong> <%= format_pledging_ends_on(project) %></p>
+					<p><strong>Deadlines:</strong> <%= format_pledging_ends_on(project) %></p>
 				</div>
 		<% end %>
 	</ul>

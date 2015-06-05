@@ -1,0 +1,25 @@
+<article>
+	<header>
+	<h1><%= @project.name %></h1>
+	</header>
+
+	<h3>Description:</h2>
+	<p>
+		<%= @project.description %>
+	</p>
+
+	<h3>Target Pledge:</h2>
+	<p>
+		<%= number_to_currency(@project.target_pledge_amount) %>
+	</p>
+
+	<h3>Website:</h2>
+	<p>
+		<%= @project.website %>
+	</p>
+
+	<h3>Pledging End:</h2>
+	<p>
+		<%= format_pledging_ends_on(@project) %>	
+	</p>
+</article>
