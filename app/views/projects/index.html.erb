@@ -1,14 +1,14 @@
-<h1><%= @projects.size %> FootStarter</h1>
+<h1><%= pluralize(@projects.size, 'FootStarter') %></h1>
 
 <div class="container">
 	<ul>
 		<% @projects.each do |project| %>
 				<h2><strong> <%= project.name %></strong></h2>
 				<div class="par">
-					<p><strong>Description:</strong> <%= project.description %>.</p>
+					<p><strong>Description:</strong> <%= truncate(project.description, length: 150, separator: ' ') %>.</p>
 					<p><strong>Cost:</strong> <%= number_to_currency(project.target_pledge_amount) %></p>
 					<p><strong>Website:</strong> <%= project.website %></p>
-					<p><strong>Total Pledges:</strong> <%= number_to_currency(project.pledging_ends_on) %></p>
+					<p><strong>Total Pledges:</strong> <%= format_pledging_ends_on(project) %></p>
 				</div>
 		<% end %>
 	</ul>
