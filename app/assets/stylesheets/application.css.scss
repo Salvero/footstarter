@@ -25,7 +25,7 @@ h1 {
 }
 
 h2 {
-	background-color: #000;
+	background-color: #0162FF;
 	color: #FFF;
 	padding: 5px 10px;
 	display: inline-block;
@@ -35,4 +35,9 @@ h2 {
 	margin-top: -25px;
 	font-size: 19px;
 	border-bottom-style: solid;
+}
+
+.links_style a {
+    text-decoration: none;
+    color: #FFF;
 }

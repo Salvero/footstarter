@@ -15,7 +15,7 @@
 
 	<h3>Website:</h2>
 	<p>
-		<%= @project.website %>
+		<%= link_to @project.website, "http://#{@project.website}", target: "_blank" %>
 	</p>
 
 	<h3>Pledging End:</h2>
@@ -23,3 +23,5 @@
 		<%= format_pledging_ends_on(@project) %>	
 	</p>
 </article>
+
+<%= link_to("Back to All FootStarters", root_path) %>

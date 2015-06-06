@@ -3,11 +3,13 @@
 <div class="container">
 	<ul>
 		<% @projects.each do |project| %>
-				<h2><strong> <%= project.name %></strong></h2>
+			<div class="links_style">
+				<h2><strong><%= link_to(project.name, project_path(project)) %></strong></h2>
+			</div>
 				<div class="par">
 					<p><strong>Description:</strong> <%= truncate(project.description, length: 150, separator: ' ') %>.</p>
 					<p><strong>Cost:</strong> <%= number_to_currency(project.target_pledge_amount) %></p>
-					<p><strong>Website:</strong> <%= project.website %></p>
+					<p><strong>Website:</strong> <%= link_to project.website, "http://#{project.website}", target: "_blank" %></p>
 					<p><strong>Deadlines:</strong> <%= format_pledging_ends_on(project) %></p>
 				</div>
 		<% end %>
